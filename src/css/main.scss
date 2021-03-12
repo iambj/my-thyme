@@ -1,0 +1,31 @@
+.topBar {
+    background: white;
+    // height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    font-family: "Metropolis";
+    .logo {
+        color: #288034;
+        font-size: 3rem;
+        align-items: center;
+        text-align: center;
+        margin: 0 0 0.5rem 0;
+    }
+    .tagLine {
+        font-size: 0.9rem;
+        font-family: "Metropolis Thin";
+        font-style: italic;
+        text-align: center;
+        color: lighten(black, 50%);
+    }
+}
+
+.projectArea {
+    display: flex;
+}
+
+.projects {
+    display: flex;
+}
