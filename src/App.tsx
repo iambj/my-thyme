@@ -1,6 +1,7 @@
 import React from "react";
-import logo from "./logo.svg";
-// import "./App.css";
+
+import "./css/defaults.css";
+import "./css/normalize.css";
 import "./css/main.scss";
 
 import TopBar from "./components/TopBar";
@@ -10,9 +11,11 @@ import ProjectArea from "./components/ProjectArea";
 function App() {
     return (
         <div className="App">
-            <TopBar />
-            <ProjectList />
-            <ProjectArea />
+            <main className="mainWrapper grid">
+                <TopBar />
+                <ProjectList />
+                <ProjectArea />
+            </main>
         </div>
     );
 }
