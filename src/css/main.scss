@@ -1,13 +1,62 @@
+:root {
+    /*  Define Colors as colors */
+    --black: rgb(34, 34, 34);
+    --white: rgb(235, 235, 235);
+    --green: #e7ff99; /* #53593E , #D5923 */
+    --darkGreen: #8ea641;
+    --red: rgb(217, 81, 63); /*  #8C3B30 */
+    --darkRed: #8c3b30;
+    --yellow: #f0ea51;
+    --darkYellow: #e6d14e; /* #E6D14E*/
+    --lightBlue: #6a97d9;
+    --darkBlue: #3f30a6; /* #4E458C */
+    --gray: #6e6e6e;
+    --lightGray: #c9c9c9;
+    --brown: #5a5049;
+    --darkBrown: #302a27;
+    --lightBrown: #7c756f;
+
+    /* Define Color intentions */
+    --background: var(--black);
+    --buttonTextColor: var(--black);
+    --danger: var(--red);
+    --footerBackground: var(--white);
+    --line: 2px solid var(--lineColor);
+    --lineAccent: 2px solid var(--green);
+    --lineColor: var(--gray);
+    --textColor: var(--white);
+    --primary: var(--green);
+    --shadow: rgba(34, 34, 34, 08);
+}
+
+html {
+    font-size: var(--baseFontSize);
+    box-sizing: border-box;
+} /*18px*/
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    color: var(--black);
+    font-family: "Metropolis";
+}
+
 .topBar {
-    background: white;
+    z-index: 10;
+    background: var(--darkBrown);
     // height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem 0;
     font-family: "Metropolis";
+    border-bottom: 1px solid var(--green);
     .logo {
-        color: #288034;
+        color: var(--green);
         font-size: 3rem;
         align-items: center;
         text-align: center;
@@ -22,10 +71,29 @@
     }
 }
 
-.projectArea {
-    display: flex;
+.mainWrapper {
+    height: 100vh;
 }
 
-.projects {
-    display: flex;
+.grid {
+    display: grid;
+    grid-template-rows: 150px auto;
+    grid-template-columns: 1fr 3fr;
+    // grid-template-areas: "deadspace topbar projectlist projectarea ";
+}
+
+.topBar {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.projectArea {
+    // display: flex;
+    // grid-area: 3 / -1;
+    // grid-row-start: 2;
+    // grid-column-start: 2;
+    // grid-column-end: 3;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    background-color: var(--lightBrown);
 }
