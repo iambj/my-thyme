@@ -7,6 +7,7 @@ export default function TrackedTime() {
             <div className="number mediumText">4/8/2010</div>
             <div>Time spent working on the main CSS</div>
             <div className="number mediumText">5:30:30</div>
+            <div className="number mediumText">[ + ][ - ][ E ]</div>
         </Time>
     );
 }

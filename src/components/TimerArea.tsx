@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const TimerArea = () => {
     return (
         <Ticker>
-            <div>123:45</div>
+            <div>123:45</div> 
         </Ticker>
     );
 };
