@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./css/defaults.css";
-import "./css/normalize.css";
+// import "./css/normalize.css";
 import "./css/main.scss";
 
 import TopBar from "./components/TopBar";

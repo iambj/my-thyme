@@ -1,4 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital@0;1&display=swap");
+
 :root {
+    // Setup
+    --baseFontSize: 62.5%;
+    --smallText: 1.5rem;
+
     /*  Define Colors as colors */
     --black: rgb(34, 34, 34);
     --white: rgb(235, 235, 235);
@@ -27,6 +33,18 @@
     --textColor: var(--white);
     --primary: var(--green);
     --shadow: rgba(34, 34, 34, 08);
+
+    // Elevations
+
+    --level-0: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    --level-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+0 20px 25px -5px rgba(0, 0, 0, 0.1) * {
+    padding: 0;
+    margin: 0;
 }
 
 html {
@@ -45,9 +63,28 @@ body {
     font-family: "Metropolis";
 }
 
+h1 {
+    // margin: 0rem;
+    font-size: 2.5rem;
+}
+
+h2 {
+    // margin: 10rem;
+    font-size: 2rem;
+}
+
+.smallText {
+    font-size: var(--smallText);
+}
+
 .topBar {
     z-index: 10;
     background: var(--darkBrown);
+    background: radial-gradient(
+        circle,
+        rgba(80, 75, 71, 1) 0%,
+        rgba(48, 42, 39, 1) 100%
+    );
     // height: 50px;
     display: flex;
     justify-content: center;
@@ -60,10 +97,15 @@ body {
         font-size: 3rem;
         align-items: center;
         text-align: center;
-        margin: 0 0 0.5rem 0;
+        margin: 0 0 0.5rem;
+        font-size: 5rem;
+        span {
+            // display: block;
+            margin: 0 1.5rem;
+        }
     }
     .tagLine {
-        font-size: 0.9rem;
+        font-size: 1.3rem;
         font-family: "Metropolis Thin";
         font-style: italic;
         text-align: center;
@@ -85,15 +127,23 @@ body {
 .topBar {
     grid-column-start: 1;
     grid-column-end: 3;
+    min-width: 500px;
 }
 
-.projectArea {
-    // display: flex;
-    // grid-area: 3 / -1;
-    // grid-row-start: 2;
-    // grid-column-start: 2;
-    // grid-column-end: 3;
-    display: grid;
-    grid-template-rows: 2fr 1fr;
-    background-color: var(--lightBrown);
+.thymeLeaf {
+    fill: var(--green);
+    width: 60px;
+}
+
+.reversed {
+    transform: rotateY(180deg);
+}
+
+.number {
+    font-family: "Courier Prime";
+    letter-spacing: -0.3rem;
+}
+
+.mediumText {
+    font-size: 1.75rem;
 }
