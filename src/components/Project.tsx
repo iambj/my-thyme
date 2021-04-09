@@ -69,7 +69,7 @@ const Container = styled.div`
         width: 0%;
         width: 100%;
         transform: scaleX(0);
-        transition: width 0.2s, transform 0.2s;
+        transition: width 0.2s, transform 0.35s cubic-bezier(1, 0, 0, 1);
         justify-self: center;
         will-change: transform;
     }
