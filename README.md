@@ -12,6 +12,7 @@
 - [ ] Allow for the counter to tick
 - [ ]  Store data
   - [ ] Load data
+- [ ] Change tracked time icons to delete and edit
   
 ## Enhancements
 
