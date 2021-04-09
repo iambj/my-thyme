@@ -67,11 +67,15 @@ const Container = styled.div`
         position: absolute;
         bottom: 0px;
         width: 0%;
-        transition: width 0.2s;
+        width: 100%;
+        transform: scaleX(0);
+        transition: width 0.2s, transform 0.2s;
         justify-self: center;
+        will-change: transform;
     }
     :hover:after {
+        transform: scaleX(1);
+        /* width: 100%; */
         border-bottom: 1px var(--primary) solid;
-        width: 100%;
     }
 `;
