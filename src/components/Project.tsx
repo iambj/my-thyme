@@ -1,18 +1,51 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function Project() {
+export interface ProjectType {
+    projectName: string;
+    id: number;
+    lastModified: Date;
+    totalTime: number;
+    /**
+     * List of time logged
+     */
+    timeLog: TimeLog[];
+    onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+}
+
+interface TimeLog {
+    date: Date;
+    note: string;
+    timeLogged: number;
+}
+
+const Project: React.FC<ProjectType> = ({
+    onClick,
+    projectName,
+    lastModified,
+    totalTime,
+    timeLog,
+    id,
+}) => {
+    // const { projectName, lastModified, totalTime, timeLog } = props;
+    const DATE = `${
+        lastModified.getMonth() + 1
+    }/${lastModified.getDate()}/${lastModified.getFullYear()}`;
     return (
-        <Container>
-            <h2>My Thyme</h2>
+        <Container id={id.toString()} onClick={onClick}>
+            <h2>{projectName}</h2>
             <div className="totalTime">
-                <span className="number">3</span>{" "}
-                <span className="timeUnit">hours</span>
+                <span className="number">{totalTime / 60} </span>
+                <span className="timeUnit">
+                    {totalTime === 60 ? "hour" : "hours"}
+                </span>
             </div>
-            <div className="lastModified smallText">4/7/2021</div>
+            <div className="lastModified smallText">{DATE}</div>
         </Container>
     );
-}
+};
+
+export default Project;
 
 const Container = styled.div`
     display: grid;

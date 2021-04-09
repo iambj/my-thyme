@@ -1,17 +1,29 @@
 import React from "react";
 import styled from "styled-components";
-import Project from "./Project";
 
-export const ProjectList = () => {
+import Project, { ProjectType } from "./Project";
+
+type Props = {
+    projects: ProjectType[];
+    onClick: (e: React.MouseEvent<HTMLElement>) => void;
+};
+
+const ProjectList: React.FC<Props> = ({ onClick, projects }) => {
     return (
         <ProjectWrapper>
             <h1>Projects</h1>
-            <Project />
-            <Project />
-            <Project />
-            <Project />
-            <Project />
-            <Project />
+
+            {projects.map((project, index) => (
+                <Project
+                    onClick={onClick}
+                    key={index}
+                    id={project.id}
+                    projectName={project.projectName}
+                    lastModified={project.lastModified}
+                    totalTime={project.totalTime}
+                    timeLog={project.timeLog}
+                />
+            ))}
         </ProjectWrapper>
     );
 };
