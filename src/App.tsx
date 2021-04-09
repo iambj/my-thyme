@@ -78,14 +78,15 @@ const App: React.FC = () => {
                 <ProjectList
                     onClick={(e) => {
                         let target = e.target as Element;
+                        // console.log(e.currentTarget);
                         let projectId: string | null | undefined;
-                        if (!target.getAttribute("id")) {
-                            projectId = target.parentElement?.getAttribute(
-                                "id",
-                            );
-                        } else {
-                            projectId = target?.getAttribute("id");
-                        }
+                        // if (!target.getAttribute("id")) {
+                        //     projectId = target.parentElement?.getAttribute(
+                        //         "id",
+                        //     );
+                        // } else {
+                        // }
+                        projectId = e.currentTarget.getAttribute("id");
                         setActiveProject(Number(projectId));
                     }}
                     projects={projects}
