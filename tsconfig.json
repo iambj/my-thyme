@@ -21,15 +21,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": ".",
-    "paths": {
-        "tslib": [
-            "path/to/node_modules/tslib/tslib.d.ts"
-        ]
-    },
+    "baseUrl": "."
   },
   "include": [
     "src"
-  ],
-
+  ]
 }
