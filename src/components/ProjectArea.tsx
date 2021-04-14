@@ -4,16 +4,24 @@ import styled from "styled-components";
 import TimerArea from "./TimerArea";
 import TrackedTimeList from "./TrackedTimeList";
 
+import { ProjectType } from "./Project";
+
 interface ProjectAreaProps {
     activeProject: number;
+    currentProject: ProjectType;
 }
 
-const ProjectArea: React.FC<ProjectAreaProps> = ({ activeProject }) => {
+const ProjectArea: React.FC<ProjectAreaProps> = ({
+    currentProject,
+    activeProject,
+}) => {
     return (
         <ProjectAreas className="projectArea">
-            <h1>{activeProject}</h1>
             <TimerArea />
-            <TrackedTimeList />
+            <TrackedTimeList
+                activeProject={activeProject}
+                currentProject={currentProject}
+            />
         </ProjectAreas>
     );
 };

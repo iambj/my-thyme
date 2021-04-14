@@ -31,10 +31,11 @@ const ProjectList: React.FC<Props> = ({ onClick, projects }) => {
 export default ProjectList;
 
 const ProjectWrapper = styled.div`
-    /* border-right: 2px solid var(--black); */
+    border-right: 1px solid var(--brown);
     color: white;
     box-shadow: 2px 0px 5px var(--shadow);
-    background-color: var(--brown);
+    /* background-color: var(--brown); */
+    background: linear-gradient(to top, var(--darkBrown) 0%, var(--brown) 100%);
     z-index: 20;
     font-size: 2rem;
     padding: 2rem;

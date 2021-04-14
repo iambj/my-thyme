@@ -31,6 +31,7 @@ const Project: React.FC<ProjectType> = ({
     const DATE = `${
         lastModified.getMonth() + 1
     }/${lastModified.getDate()}/${lastModified.getFullYear()}`;
+    // console.log(timeLog);
     return (
         <Container id={id.toString()} onClick={onClick}>
             <h2>{projectName}</h2>
@@ -40,7 +41,7 @@ const Project: React.FC<ProjectType> = ({
                     {totalTime === 60 ? "hour" : "hours"}
                 </span>
             </div>
-            <div className="lastModified smallText">{DATE}</div>
+            <div className="lastModified  smallText">{DATE}</div>
         </Container>
     );
 };
@@ -102,7 +103,7 @@ const Container = styled.div`
         width: 0%;
         width: 100%;
         transform: scaleX(0);
-        transition: width 0.2s, transform 0.35s cubic-bezier(1, 0, 0, 1);
+        transition: width 0.2s, transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
         justify-self: center;
         will-change: transform;
     }

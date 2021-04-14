@@ -24,6 +24,21 @@ const projects = [
                 note: "This is a fake time log",
                 timeLogged: 256,
             },
+            {
+                date: new Date(),
+                note: "This is a fake time log",
+                timeLogged: 300,
+            },
+            {
+                date: new Date(),
+                note: "This is a fake time log",
+                timeLogged: 100,
+            },
+            {
+                date: new Date(),
+                note: "This is a fake time log",
+                timeLogged: 60,
+            },
         ],
     },
     {
@@ -32,6 +47,11 @@ const projects = [
         lastModified: new Date(),
         totalTime: 180,
         timeLog: [
+            {
+                date: new Date(),
+                note: "This is a fake time log",
+                timeLogged: 256,
+            },
             {
                 date: new Date(),
                 note: "This is a fake time log",
@@ -65,19 +85,27 @@ const projects = [
             },
         ],
     },
+    {
+        projectName: "Empty Project",
+        id: 5,
+        lastModified: new Date(),
+        totalTime: 0,
+        timeLog: [],
+    },
 ];
 
 const App: React.FC = () => {
-    const [activeProject, setActiveProject] = useState(1);
-    const currentProject = projects.filter((p) => p.id === activeProject);
-    console.log(currentProject);
+    const [activeProject, setActiveProject] = useState(0);
+    const currentProject = projects.filter((p) => p.id === activeProject)[0];
+    console.log("Current", currentProject, activeProject);
     return (
         <div className="App">
+            {/* <div>{activeProject}</div> */}
             <main className="mainWrapper grid">
                 <TopBar />
                 <ProjectList
                     onClick={(e) => {
-                        let target = e.target as Element;
+                        // let target = e.target as Element;
                         // console.log(e.currentTarget);
                         let projectId: string | null | undefined;
                         // if (!target.getAttribute("id")) {
@@ -92,8 +120,8 @@ const App: React.FC = () => {
                     projects={projects}
                 />
                 <ProjectArea
-                    // projects={projects}
                     activeProject={activeProject}
+                    currentProject={currentProject}
                 />
             </main>
         </div>
