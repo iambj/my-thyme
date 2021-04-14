@@ -4,9 +4,8 @@
 
 ## TODO
 
-
 - [ ] Add New Project Button
-  - [ ] Populate tracked time section on project click
+  - [x] Populate tracked time section on project click
 - [ ] Projects
   - [ ] Add / Edit Dialog
   - [ ] Delete
