@@ -11,6 +11,11 @@ const tagLines = [
     "We all love some free thyme.",
 ];
 
+/**
+ * Picks a random tagline from the tagLines array<string>
+ * @returns string
+ */
+
 function pickTagLine(): string {
     const pick = Math.floor(Math.random() * 3);
     const tagLine = tagLines[pick];
@@ -28,13 +33,13 @@ export const TopBar = () => {
     // TODO
     //? try to update the state high up so it doesn't keep causing a refresh?
 
-    useEffect(() => {
-        const update = setInterval(() => {
-            setTag(pickTagLine());
-            console.log("tick");
-            clearInterval(update);
-        }, 1000);
-    });
+    // useEffect(() => {
+    //     const update = setInterval(() => {
+    //         setTag(pickTagLine());
+    //         console.log("tick");
+    //         clearInterval(update);
+    //     }, 1000);
+    // });
 
     return (
         <header className="topBar">
