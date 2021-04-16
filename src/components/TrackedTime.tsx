@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
+import {
+    formatSeconds,
+    formatMinutes,
+    formatHours,
+    formatDate,
+} from "../helpers/helpers";
+
 import minus from "../images/minus.svg";
 import plus from "../images/plus.svg";
 import edit from "../images/edit.svg";
@@ -9,29 +16,28 @@ interface TimeLog {
     date: Date;
     note: string;
     timeLogged: number;
+    id: number;
+    handleDelete: (arg0: number) => void;
 }
 
-/**
- *
- * @param date
- * @returns a string with a date in the form of MM/DD/YYYY
- */
-function formatDate(date: Date): string {
-    return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
-}
-
-const TrackedTime: React.FC<TimeLog> = ({ date, note, timeLogged }) => {
+const TrackedTime: React.FC<TimeLog> = ({
+    date,
+    note,
+    timeLogged,
+    id,
+    handleDelete,
+}) => {
     // TODO: format the dates nicely
 
-    console.log(date, note, timeLogged);
-    const formattedHours = Math.round(timeLogged / 60);
-    const formattedSeconds = Math.round(timeLogged / 60 / 60);
+    const formattedMinutes = formatMinutes(timeLogged);
+    const formattedSeconds = formatSeconds(timeLogged);
     const formattedDate = formatDate(date);
     return (
         <Time>
             <div className="number mediumText">{formattedDate}</div>
             <div>{note}</div>
-            <div className="number mediumText">{`${formattedHours}:${formattedSeconds}`}</div>
+            <div onClick={() => handleDelete(id)}>{id}</div>
+            <div className="number mediumText">{`${formattedMinutes}:${formattedSeconds}`}</div>
             <div className="button">
                 <img src={plus} alt="" />
             </div>

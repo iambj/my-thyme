@@ -5,6 +5,15 @@
 
 /**
  *
+ * @param date
+ * @returns a string with a date in the form of MM/DD/YYYY
+ */
+function formatDate(date: Date): string {
+    return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+}
+
+/**
+ *
  * @param seconds
  * @returns a string of seconds with a "0" if needed
  */
@@ -46,4 +55,4 @@ const formatHours = (seconds: number): string => {
     return `${pad}${hours}`;
 };
 
-export { formatSeconds, formatMinutes, formatHours };
+export { formatSeconds, formatMinutes, formatHours, formatDate };
