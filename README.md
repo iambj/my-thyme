@@ -7,17 +7,18 @@
 - [ ] Add New Project Button
   - [x] Populate tracked time section on project click
 - [ ] Projects
-  - [ ] Add / Edit Dialog
+  - [ ] Add 
+  - [x] Edit Dialog (not needed)
   - [ ] Delete
 - [ ] Add time tracking session button
   - [x] Area accepts project data
   - [ ] Change tracked time icons to delete and edit 
   - [ ] Remove session
   - [ ] Edit session
-- [ ] Allow for the counter to tick
+- [x] Allow for the counter to tick
   - [ ] Buttons
-    - [ ] Start
-    - [ ] Pause
+    - [x] Start
+    - [x] Pause
     - [ ] Stop
     - [ ] Connect to session times
 - [ ]  Data
@@ -30,3 +31,7 @@
 - [ ] SVG leaf border/hr
 - [ ] Add changing tag line
   - [ ] Use React Spring to animate.
+
+## Concerns
+
+- When switching projects, the timer needs to stop, save for the last project, and reset
