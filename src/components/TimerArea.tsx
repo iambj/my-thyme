@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
-import { formatSeconds, formatMinutes, formatHours } from "../helpers";
+import { formatSeconds, formatMinutes, formatHours } from "../helpers/helpers";
 
 let activeTime: number = 0; // seconds for now
 
@@ -45,10 +45,12 @@ function useInterval(callback: any, delay: number | null) {
     }, [delay]);
 }
 
+let startTime: number;
 const TimerArea: React.FC<Timer> = () => {
     let [time, setTime] = useState("00:00:00");
-    let [delay, setDelay] = useState(250);
+    let [delay, setDelay] = useState(1000);
     let [isRunning, setIsRunning] = useState(false);
+
 
     useInterval(
         () => {
@@ -64,7 +66,11 @@ const TimerArea: React.FC<Timer> = () => {
             <div className="controls">
                 <div
                     onClick={() => {
-                        console.log("pause");
+                        if (!startTime) {
+                            startTime = Date.now();
+                            console.log("first");
+                        }
+                        console.log("Play");
                         setIsRunning(true);
                     }}
                 >

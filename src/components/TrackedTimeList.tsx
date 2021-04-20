@@ -7,24 +7,30 @@ import Project, { ProjectType } from "./Project";
 interface ProjectList {
     currentProject: ProjectType;
     activeProject: number;
+    handleDelete: (arg0: number) => void;
 }
 
 export const TrackedTimeList: React.FC<ProjectList> = ({
     activeProject,
     currentProject,
+    handleDelete,
 }) => {
     // let currentProject = projects.filter((p) => p.id === activeProject);
-    // console.dir(currentProject);
+    // console.dir(currentProject?.timeLog?.id);
+
     return (
         <Times>
-            {currentProject?.timeLog?.map((project, index) => (
-                <TrackedTime
-                    key={index}
-                    date={project.date}
-                    note={project.note}
-                    timeLogged={project.timeLogged}
-                />
-            ))}
+            {currentProject?.timeLog &&
+                currentProject?.timeLog?.map((project, index) => (
+                    <TrackedTime
+                        key={index}
+                        date={project.date}
+                        note={project.note}
+                        timeLogged={project.timeLogged}
+                        id={project.id}
+                        handleDelete={handleDelete}
+                    />
+                ))}
             {/* TODO: prettify */}
             {!currentProject?.timeLog?.length && <div>Tack some time</div>}
         </Times>
